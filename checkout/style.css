@@ -1,0 +1,21 @@
+/* CSS untuk bagian feedback di halaman track & success */
+.feedback-section, .feedback-prompt {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.feedback-section h3, .feedback-prompt h3 {
+    margin: 0 0 10px 0;
+    color: #fff;
+    border: none;
+    padding: 0;
+}
+
+.feedback-section p, .feedback-prompt p {
+    color: #94a3b8;
+    margin-bottom: 20px;
+}

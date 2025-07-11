@@ -1,0 +1,698 @@
+/* === MAIN LAYOUT === */
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-layout {
+    display: flex;
+}
+
+.admin-sidebar {
+    width: 200px;
+    background-color: #1e293b;
+    height: 97vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-right: 2px solid #334155;
+}
+
+.admin-main-content {
+    margin-left: 240px;
+    padding: 30px;
+    width: calc(100% - 240px);
+}
+
+/* === SIDEBAR === */
+.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 10px 5px; margin-bottom: 20px; }
+.sidebar-header .logo { width: 30px; height: 30px; }
+.sidebar-header h1 { font-size: 1.4rem; color: #fff; margin: 0; }
+.sidebar-nav { flex: 1; }
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+.sidebar-nav .nav-link:hover { background-color: #334155; color: #fff; }
+.sidebar-nav .nav-link.active { background-color: #3b82f6; color: #fff; }
+.sidebar-nav .nav-link i { width: 15px; text-align: center; }
+.sidebar-footer .logout-btn { color: #f87171; }
+.sidebar-footer .logout-btn:hover { background-color: rgba(248, 113, 113, 0.1); }
+
+/* === CONTENT HEADER === */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.content-header h1 { font-size: 2rem; margin: 10px; color: #fff; }
+.content-header p { margin: 10px 10px 0; color: #94a3b8; }
+.btn {
+    padding: 10px 20px; border: none; border-radius: 6px; font-weight: 600;
+    cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.2s ease;
+}
+.btn-primary { background: #3b82f6; color: white; }
+.btn-primary:hover { background: #2563eb; }
+.btn-secondary { background: #334155; color: #e2e8f0; border: 1px solid #475569; }
+.btn-secondary:hover { background: #475569; }
+
+/* === TABLE === */
+.table-container { background-color: #1e293b; border-radius: 12px; }
+.table-toolbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; }
+.search-bar { position: relative; }
+.search-bar i { position: absolute; left: 12px; top: 12px; color: #64748b; }
+.search-bar input {
+    background-color: #0f172a; border: 1px solid #334155; border-radius: 6px;
+    padding: 10px 10px 10px 35px; color: #e2e8f0;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid #334155; }
+th { color: #94a3b8; text-transform: uppercase; font-size: 12px; }
+tbody tr:hover { background-color: #2c3a52; }
+tbody tr:last-child td { border-bottom: none; }
+.text-muted { color: #64748b; }
+.product-info { display: flex; align-items: center; gap: 15px; }
+.product-thumb { width: 50px; height: 50px; object-fit: cover; border-radius: 6px; }
+
+/* Table Actions & Badges */
+.actions { display: flex; gap: 5px; }
+.actions form {
+    margin: 0;
+    padding: 0;
+    line-height: 1; /* Membantu perataan vertikal pada beberapa browser */
+}
+.action-btn { background: none; border: none; color: #94a3b8; cursor: pointer; padding: 15px; border-radius: 4px; }
+.action-btn:hover { background-color: #334155; color: #fff; }
+.action-btn.delete:hover { background-color: rgba(248, 113, 113, 0.1); color: #f87171; }
+.status-badge { padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; text-transform: capitalize; }
+.status-public { background-color: rgba(74, 222, 128, 0.1); color: #4ade80; }
+.status-out-of-stock { background-color: rgba(248, 113, 113, 0.1); color: #f87171; }
+.table-footer { padding: 20px 20px; color: #64748b; font-size: 0.9rem; }
+
+.form-grid-layout {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 35px;
+align-items: start;
+}
+
+.main-details,
+.side-details {
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+
+.form-section-card {
+background-color: #1e293b;
+padding: 25px;
+border-radius: 10px;
+border: 1px solid #334155;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section-card h3 {
+font-size: 1.1rem;
+font-weight: 600;
+color: #f1f5f9;
+margin-top: 0;
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 1px solid #334155;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+font-size: 0.9rem;
+color: #94a3b8;
+margin-bottom: 8px;
+font-weight: 500;
+}
+
+.form-control {
+width: 100%;
+padding: 10px;
+border: 1px solid #334155;
+background-color: #0f172a;
+color: #e2e8f0;
+border-radius: 6px;
+font-size: 1rem;
+box-sizing: border-box; 
+}
+
+.form-control:focus {
+outline: none;
+border-color: #3b82f6;
+box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+textarea.form-control {
+min-height: 150px;
+}
+
+.image-upload-box {
+position: relative;
+border: 2px dashed #334155;
+border-radius: 6px;
+padding: 20px;
+text-align: center;
+background-color: #0f172a;
+cursor: pointer;
+overflow: hidden;
+}
+
+.image-upload-input {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+cursor: pointer;
+}
+
+.image-upload-label {
+color: #94a3b8;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+pointer-events: none;
+font-size: 1rem;
+font-weight: 500;
+}
+
+.image-preview {
+max-width: 100%;
+max-height: 200px;
+object-fit: contain;
+border-radius: 4px;
+margin-top: 10px;
+}
+
+.form-text {
+font-size: 0.8rem;
+color: #64748b;
+display: block;
+margin-top: 5px;
+}
+
+.form-actions-footer {
+grid-column: 1 / -1;
+display: flex;
+justify-content: flex-end;
+gap: 15px;
+padding: 20px 0;
+}
+
+.btn {
+padding: 10px 20px;
+border: none;
+border-radius: 6px;
+font-weight: 500;
+cursor: pointer;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+transition: all 0.2s ease;
+}
+
+.btn-primary {
+background: #3b82f6;
+color: white;
+}
+
+.btn-primary:hover {
+background: #2563eb;
+}
+
+.btn-secondary {
+background: #334155;
+color: #e2e8f0;
+border: 1px solid #475569;
+}
+
+.btn-secondary:hover {
+background: #475569;
+}
+.btn-danger {
+background: #f87171;
+color: white;
+}
+.btn-danger:hover {
+background: #dc2626;
+}
+.btn-success {
+background: #4ade80;
+color: white;
+}
+.btn-success:hover {
+background: #22c55e;
+}
+.form-error {
+color: #f87171; /* Red color for error messages */
+font-size: 0.9rem;
+margin-top: 5px;
+}
+
+/* === CSS KHUSUS UNTUK HALAMAN DASHBOARD === */
+
+/* Grid untuk Kartu Statistik */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif */
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #334155;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card i {
+    font-size: 1.8rem; /* Ukuran ikon diperkecil agar lebih elegan */
+    padding: 18px;
+    border-radius: 50%;
+}
+
+.icon-revenue { color: #4ade80; background-color: rgba(74, 222, 128, 0.1); }
+.icon-orders { color: #60a5fa; background-color: rgba(96, 165, 250, 0.1); }
+.icon-customers { color: #facc15; background-color: rgba(251, 191, 36, 0.1); }
+
+.stat-card .stat-info p {
+    margin: 0 0 5px 0;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stat-card .stat-info span {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+/* Grid untuk Konten Utama (Grafik & Panel Samping) */
+.dashboard-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.chart-container {
+    padding: 25px;
+}
+
+.chart-container h3 {
+    margin-top: 0;
+}
+
+.side-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Kartu Promosi Discord */
+.discord-card {
+    background: linear-gradient(135deg, #5865F2, #3b82f6);
+    color: #fff;
+    border: none;
+}
+.discord-card h4 { margin: 0 0 10px 0; font-size: 1.1rem; }
+.discord-card p { opacity: 0.9; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+.discord-card .btn { background-color: #fff; color: #5865F2; }
+
+/* Kartu Pengumuman */
+.announcement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.announcement-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #334155;
+    transition: background-color 0.2s ease;
+}
+.announcement-list li:first-child { padding-top: 0; }
+.announcement-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.announcement-list li strong { display: block; color: #e2e8f0; margin-bottom: 5px; font-weight: 600; }
+.announcement-list li small { color: #64748b; }
+
+/* Badge untuk tabel 'Latest Orders' */
+.status-badge.paid {
+    background-color: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Link di dalam tabel */
+.link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 500;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive untuk Grid Utama */
+@media (max-width: 1100px) {
+    .dashboard-main-grid {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+    }
+}
+
+/* === CSS TAMBAHAN UNTUK HALAMAN INVOICES === */
+
+/* Status Badge di Tabel orders.php */
+.status-badge { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: capitalize; }
+.status-paid { background-color: rgba(74, 222, 128, 0.1); color: #4ade80; }
+.status-pending { background-color: rgba(251, 191, 36, 0.1); color: #facc15; }
+.status-failed, .status-cancelled { background-color: rgba(248, 113, 113, 0.1); color: #f87171; }
+.link { color: #60a5fa; text-decoration: none; font-weight: 500; }
+.link:hover { text-decoration: underline; }
+
+/* Layout Grid untuk Detail Invoice */
+.invoice-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+.invoice-main, .invoice-side {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.card h3 {
+    font-size: 1.1rem; color: #f1f5f9; margin: 0 0 20px 0;
+    padding-bottom: 15px; border-bottom: 1px solid #334155;
+}
+
+/* Info Grid di dalam Card */
+.info-grid { display: flex; flex-direction: column; gap: 15px; }
+.info-grid div { display: flex; justify-content: space-between; align-items: center; }
+.info-grid label { color: #94a3b8; font-size: 0.9rem; }
+.info-grid span { color: #e2e8f0; font-weight: 500; text-align: right; }
+.info-grid span.user-agent { font-size: 0.8rem; color: #94a3b8; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.info-grid .total-price { color: #4ade80; font-size: 1.1rem; font-weight: bold; }
+
+/* Tabel Item */
+.item-table { width: 100%; border-collapse: collapse; }
+.item-table td { padding: 12px 0; border-bottom: 1px solid #334155; }
+.item-table tr:last-child td { border-bottom: none; }
+.item-table td:last-child { text-align: right; font-weight: 500; }
+
+/* Riwayat Pembayaran */
+.payment-history-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; font-size: 0.9rem; }
+.payment-history-item:not(:last-child) { border-bottom: 1px solid #334155; }
+
+/* Catatan Invoice */
+.note { color: #94a3b8; line-height: 1.6; font-style: italic; margin: 0; }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .invoice-grid { grid-template-columns: 1fr; }
+}
+
+/* === CSS TAMBAHAN UNTUK FORM UPDATE DI DALAM TABEL === */
+
+.status-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antar dropdown dan tombol */
+    width: 100%;
+}
+
+.status-select {
+    /* Style ini sudah ada dari jawaban sebelumnya, pastikan tidak duplikat */
+    flex-grow: 1; /* Membuat dropdown mengisi ruang yang tersedia */
+    padding: 8px;
+    border: 1px solid #475569;
+    background-color: #334155;
+    color: #e2e8f0;
+    border-radius: 6px;
+    font-weight: 500;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right .7em top 50%;
+    background-size: .65em auto;
+    cursor: pointer;
+}
+
+.update-btn {
+    /* Style ini sudah ada dari jawaban sebelumnya, pastikan tidak duplikat */
+    padding: 8px 16px;
+    font-size: 13px;
+    background-color: #3b82f6;
+    color: white;
+    flex-shrink: 0; /* Mencegah tombol menyusut */
+}
+
+.update-btn:hover {
+    background-color: #2563eb;
+}
+
+.alert {
+    display: flex;
+    top: 20px;
+    right: 20px;
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(31, 41, 55, 0.9);
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid;
+}
+
+.alert i {
+    font-size: 1.2rem;
+}
+
+/* Notifikasi Sukses (Hijau) */
+.alert.alert-success { 
+    background-color: rgba(74, 222, 128, 0.1); 
+    color: #4ade80; 
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+/* Notifikasi Error (Merah) */
+.alert.alert-error { 
+    background-color: rgba(248, 113, 113, 0.1); 
+    color: #f87171; 
+    border-color: rgba(248, 113, 113, 0.3);
+}
+
+/* === CSS TAMBAHAN UNTUK HALAMAN CUSTOMERS === */
+
+/* Teks kecil di bawah nilai utama */
+.sub-text {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Tombol Aksi berupa Teks */
+.action-btn-text {
+    color: #60a5fa;
+    font-weight: 500;
+    font-size: 13px;
+    text-decoration: none;
+    margin-right: 15px; /* Jarak antar tombol */
+    white-space: nowrap; /* Mencegah teks turun baris */
+}
+
+.action-btn-text:hover {
+    text-decoration: underline;
+}
+
+.action-btn-text.edit-balance {
+    color: #facc15;
+}
+th, td {
+    padding: 20px 15px;
+    text-align: left;
+    border-bottom: 3px solid #334155;
+    vertical-align: middle; /* INI KUNCINYA: Membuat konten di tengah secara vertikal */
+}
+
+/* === CSS TAMBAHAN UNTUK HALAMAN REVIEWS === */
+
+/* Tampilan Bintang Rating */
+.star-rating {
+    display: flex;
+    gap: 2px;
+}
+.star {
+    font-size: 1rem;
+}
+.star.filled {
+    color: #facc15; /* Warna kuning untuk bintang terisi */
+}
+.star.empty {
+    color: #475569; /* Warna abu-abu untuk bintang kosong */
+}
+
+/* Kolom Feedback */
+.feedback-text {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Warna khusus untuk tombol aksi di halaman review */
+.action-btn-text.reply {
+    color: #60a5fa; /* Biru */
+}
+.action-btn-text.appeal {
+    color: #f87171; /* Merah */
+}
+
+/* === CSS MODERN UNTUK MODAL POPUP === */
+
+.modal-overlay {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.7); /* Latar belakang lebih gelap */
+    backdrop-filter: blur(5px); /* Efek blur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: #1e293b;
+    border-radius: 12px;
+    width: 550px;
+    max-width: 90%;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.4s ease-out;
+}
+
+.modal-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    padding: 0;
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.original-feedback {
+    margin-bottom: 25px;
+}
+.original-feedback label {
+    font-weight: 600;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+}
+.feedback-display {
+    background-color: #0f172a;
+    padding: 15px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    border: 1px solid #334155;
+}
+.feedback-display p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+.feedback-display .star-rating {
+    margin-top: 5px;
+}
+
+.modal-footer {
+    padding: 15px 25px;
+    border-top: 1px solid #334155;
+    background-color: #192333;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Tombol reply di tabel */
+.action-btn-text.reply {
+    color: #60a5fa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 500;
+}
+.action-btn-text.reply:hover {
+    text-decoration: underline;
+}
