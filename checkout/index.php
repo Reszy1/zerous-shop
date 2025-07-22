@@ -434,7 +434,7 @@ function generateOrderNumber() {
             </div>
             
             <div class="form-section">
-                <h3>Order Notes (Optional)</h3>
+                <h4>Order Notes (Optional)</h4>
                 <div class="form-group">
                     <textarea name="notes" class="form-control" rows="3" placeholder="Special instructions for your order..."></textarea>
                 </div>
