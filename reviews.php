@@ -33,11 +33,19 @@ $reviews = $stmt->fetchAll();
 </head>
 <body>
 
+<<<<<<< HEAD
+=======
+<!-- Loading Screen -->
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
 <div id="loading-screen">
     <div class="spinner"></div>
     <p>Loading...</p>
 </div>
 
+<<<<<<< HEAD
+=======
+<!-- ====== HEADER ====== -->
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
 <header>
     <div class="logo-title">
         <img src="assets/logo.webp" alt="Logo" class="logo">
@@ -55,6 +63,10 @@ $reviews = $stmt->fetchAll();
 
 <style>
 body {
+<<<<<<< HEAD
+=======
+    background-color:rgb(255, 255, 255);
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
     color: white;
     margin: 0;
     padding: 0;
@@ -273,6 +285,21 @@ body {
             border-top-color: rgba(88, 88, 255, 0.4);
         }
 
+<<<<<<< HEAD
+=======
+        /* Pastikan body menggunakan flexbox untuk sticky footer */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Main content area */
+        .main-content {
+            flex: 1;
+        }
+
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
         /* Responsive footer */
         @media (max-width: 768px) {
             footer {
@@ -282,8 +309,15 @@ body {
         }
 </style>
 
+<<<<<<< HEAD
 <main class="content">
 
+=======
+<!-- ====== MAIN CONTENT ====== -->
+<main class="content">
+
+    <!-- Filter Review Form -->
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
     <section class="filter-review-section" id="review-filter">
         <h2>Customer Reviews</h2>
         <form method="GET" class="filter-form">
@@ -303,6 +337,10 @@ body {
         </form>
     </section>
 
+<<<<<<< HEAD
+=======
+    <!-- Review Display Section -->
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
     <section class="reviews-section" id="reviews">
         <?php if (count($reviews) > 0): ?>
             <?php foreach ($reviews as $review):
@@ -344,7 +382,12 @@ body {
 
 <?php include 'contact-widget.php'; ?>
 
+<<<<<<< HEAD
 <footer>
+=======
+<!-- ====== FOOTER ====== -->
+    <footer>
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
         <div style="max-width: 1200px; margin: 0 auto;">
             &copy; <?php echo date('Y'); ?> Zerous Shop. All rights reserved.
             <br>
@@ -353,6 +396,10 @@ body {
             </small>
         </div>
     </footer>
+<<<<<<< HEAD
+=======
+<!-- ====== LOADING SCREEN SCRIPT ====== -->
+>>>>>>> ae843433873d7c7e4a2788bb3695a960f8f4d323
 <script>
 window.addEventListener('load', () => {
     const loader = document.getElementById('loading-screen');
