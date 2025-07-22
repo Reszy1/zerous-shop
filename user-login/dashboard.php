@@ -89,25 +89,29 @@ $customerSince = date('M d, Y', strtotime($user['created_at']));
     .welcome-header h2 { font-size: 1.8rem; font-weight: 700; color: #fff; margin: 0 0 5px 0; }
     .welcome-header p { color: #94a3b8; margin: 0; }
 
-    /* PENYESUAIAN: Ukuran Kartu Statistik disamakan */
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+    /* --- PERUBAHAN DI SINI --- */
+    .stats-grid { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); /* Diubah untuk memastikan 3 kolom */
+        gap: 25px; 
+    }
     .stat-card {
         background-color: #1e293b;
         border-radius: 12px;
-        padding: 20px; /* Padding disesuaikan */
+        padding: 20px; 
         display: flex;
         align-items: center;
-        gap: 15px; /* Jarak ikon dan teks disesuaikan */
+        gap: 15px; 
         border: 1px solid #334155;
     }
-    .stat-card i { font-size: 1.2rem; padding: 12px; border-radius: 8px; } /* Ukuran ikon dan padding diperkecil */
+    .stat-card i { font-size: 1.2rem; padding: 12px; border-radius: 8px; } 
     .icon-orders { color: #60a5fa; background-color: rgba(96, 165, 250, 0.1); }
     .icon-spent { color: #4ade80; background-color: rgba(74, 222, 128, 0.1); }
     .icon-since { color: #facc15; background-color: rgba(251, 191, 36, 0.1); }
-    .stat-info p { margin: 0 0 5px 0; color: #94a3b8; font-size: 0.85rem; font-weight: 500; } /* Ukuran font disesuaikan */
-    .stat-info span { font-size: 1.4rem; font-weight: 600; color: #fff; } /* Ukuran font disesuaikan */
+    .stat-info p { margin: 0 0 5px 0; color: #94a3b8; font-size: 0.85rem; font-weight: 500; } 
+    .stat-info span { font-size: 1.4rem; font-weight: 600; color: #fff; } 
 
-    /* PENYESUAIAN: Kartu Pesanan Terakhir disamakan */
+    /* Kartu Pesanan Terakhir */
     .latest-order-card {
         background-color: #1e293b;
         border-radius: 12px;
@@ -121,13 +125,20 @@ $customerSince = date('M d, Y', strtotime($user['created_at']));
     .order-total { font-size: 1.1rem; font-weight: 600; color: #fff; }
     .no-orders-msg { color: #94a3b8; margin: 0; padding: 20px 0; text-align: center;}
 
-    /* PENYESUAIAN: Tombol disamakan dengan orders.php */
+    /* Tombol */
     .btn-primary {
         background: #3b82f6; color: white; padding: 8px 16px;
         border: none; border-radius: 6px; cursor: pointer;
         font-weight: 500; text-decoration: none; font-size: 13px;
     }
     .btn-primary:hover { background: #2563eb; }
+
+    /* Responsive untuk grid statistik */
+    @media (max-width: 992px) {
+        .stats-grid {
+            grid-template-columns: 1fr; /* Kembali ke 1 kolom di tablet */
+        }
+    }
 
     </style>
 </head>
